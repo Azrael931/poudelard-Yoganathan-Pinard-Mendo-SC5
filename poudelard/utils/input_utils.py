@@ -1,9 +1,7 @@
 def demander_nom():
-    nom=str(input("Etrer le nom de votre personnage :"))
-    prénom=str(input("Etrer le prénom de votre personnage :"))
-    message='welcome to Poudlard',nom+' '+prénom
-    return message
-print(demander_nom())
+    nom = str(input("Entrer le nom de votre personnage : "))
+    prenom = str(input("Entrer le prénom de votre personnage : "))
+    message = 'Welcome to Poudlard ' + nom + ' ' + prenom
+    print(message)
+    return nom, prenom
 
-
-def demander_texte():
