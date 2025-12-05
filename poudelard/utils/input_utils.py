@@ -1,8 +1,11 @@
-def demander_texte(texte):
-    res=texte
-    return res
+def demander_texte(message):
+    while  True:
+        texte = input(message).strip()
 
+        if len(texte) == 0:
+            print("Veuillez entrer un texte non vide.")
+        else:
+            return texte
 
-nom=str(input("Veuillez entrer votre nom:"))
-prénom=str(input("Veuillez entrer votre prénom:"))
-print(demander_texte(nom),demander_texte(prénom))
+nom = demander_texte("Entrez le nom de votre personnage : ")
+print("Bienvenue,", nom)
