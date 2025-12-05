@@ -1,11 +1,11 @@
-def demander_texte(message):
+'''def demander_texte(message):
     while  True:
         texte = input(message).strip()
 
         if len(texte) == 0:
             print("Veuillez entrer un texte non vide.")
         else:
-            return texte
+            return texte'''
 
 def demander_nombre(message, min_val=None, max_val=None):
     while True:
@@ -37,4 +37,3 @@ def demander_nombre(message, min_val=None, max_val=None):
             continue
 
         return valeur
-
