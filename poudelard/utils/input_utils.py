@@ -1,4 +1,3 @@
 
 
-
 def demander_texte():
