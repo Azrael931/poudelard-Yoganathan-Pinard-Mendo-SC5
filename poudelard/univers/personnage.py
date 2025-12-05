@@ -1,19 +1,14 @@
 from poudelard.utils.input_utils import demander_nom
 
-def initialiser_personnage(prenom,nom,argent,ambition,courage,loyaute,intelligence):
+
+def initialiser_personnage(prenom,nom,argent,attributs):
     return {
         "prenom" : prenom,
         "nom" : nom,
         "argent" : argent,
         "inventaire" : [],
         "sortilèges" : [],
-        "attributs" : {
-            "ambition" : ambition,
-            "courage" : courage,
-            "intelligence" : intelligence,
-            "loyauté" : loyaute,
-
-        }
+        "attributs" : attributs
 
     }
 
@@ -32,5 +27,6 @@ def afficher_personnage(personnage):
 
 if __name__ == "__main__":
     nom, prenom = demander_nom()
-    joueur = initialiser_personnage(prenom, nom, 100, 5, 5, 5, 5)
+    joueur = initialiser_personnage(prenom, nom, 100, 5)
     afficher_personnage(joueur)
+
