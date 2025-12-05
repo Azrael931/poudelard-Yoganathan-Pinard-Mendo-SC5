@@ -9,3 +9,4 @@ def demander_texte(message):
 
 nom = demander_texte("Entrez le nom de votre personnage : ")
 print("Bienvenue,", nom)
+
