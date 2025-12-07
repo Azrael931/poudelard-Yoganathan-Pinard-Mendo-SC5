@@ -1,4 +1,4 @@
-def initialiser_personnage(prenom, nom, attributs): #initilisation du personnage
+def initialiser_personnage(nom, prenom, attributs): #initilisation du personnage
 
     joueur = {
         "nom": nom,

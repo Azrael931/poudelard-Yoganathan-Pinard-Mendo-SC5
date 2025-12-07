@@ -1,6 +1,7 @@
+import json
+
 from poudelard.univers.personnage import *
 from poudelard.utils.input_utils import *
-
 
 def introduction():
     print("")
@@ -17,24 +18,33 @@ def creer_personnage(): #Création d'un personnage
     return initialiser_personnage(nom, prenom, attributs)
 
 if __name__ == "__main__": #Test de la fonction creer_personnage
-    perso = creer_personnage()
-    afficher_personnage(perso)
+    joueur = creer_personnage()
+    afficher_personnage(joueur)
 
-def recevoir_lettre():
+def recevoir_lettre(): #Réception de la lettre pour Poudlard
     print("Une chouette traverse la fenêtre et vous apporte une lettre scellée du sceau de Poudlard...")
     print("«Cher, élève,\n Nous avons le plaisir de vous informer que vous avez été admis à l'école de sorcellerie de Poudlard !»\n Souhaitez-vous accepter cette invitation et partir pour Pourdlard ?")
-    choix = ["Oui, bien sûr !", "Non, je préfère rester avec l'oncle Vernon..."]
-    demander_choix("Votre choix :", choix)
-    if choix == 2:
+    options_lettre = ["Oui, bien sûr !", "Non, je préfère rester avec l'oncle Vernon..."]
+    reponses_lettre = demander_choix("Votre choix :", options_lettre)
+    if reponses_lettre == 2:
+        print("Vous avez vécu une vie de Moldu et vous êtes mort.")
         exit()
+
 
 if __name__ == "__main__": #Test de la fonction recevoir_lettre
     recevoir_lettre()
 
-def rencontrer_hagrid(personnage):
+def rencontrer_hagrid(personnage): #Rencontre avec Hagrid
     print(f"Hagrid : 'Salut {personnage['prenom']} ! Je suis venu t'aider à faire tes achats sur le Chemin de Traverse.'\n Voulez-vous suivre Hagrid ?")
-    choix = ["Oui","Non"]
-    demander_choix("Votre choix",choix)
+    options_hagrid = ["Oui","Non"]
+    reponses_hagrid = demander_choix("Votre choix",options_hagrid)
+    if reponses_hagrid == 2:
+        print("Hagrid vous attrape par les oreilles et vous entraîne quand même avec lui !")
 
-if __name__ == "__main__":
-    rencontrer_hagrid(perso)
+if __name__ == "__main__": #Test de la fonction rencontrer_hagrid
+    rencontrer_hagrid(joueur)
+
+def acheter_fournitures(personnage) :
+    json.load(poudelard.data.inventaire.json)
+
+
