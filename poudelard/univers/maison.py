@@ -29,40 +29,7 @@ def afficher_maison_gagnante(maisons):
          print("la maison ayant le score le plus élevé est :", k)
 
 
-'''def afficher_maison_gagnante(maisons):
-    g = maisons["Gryffondor"]
-    s = maisons["Serpentard"]
-    p = maisons["Poufsouffle"]
-    e = maisons["Serdaigle"]
 
-    if g > s and g > p and g > e:
-        print("La maison gagnante est Gryffondor avec", g, "points.")
-
-    elif s > g and s > p and s > e:
-        print("La maison gagnante est Serpentard avec", s, "points.")
-
-    elif p > g and p > s and p > e:
-        print("La maison gagnante est Poufsouffle avec", p, "points.")
-
-    elif e > g and e > s and e > p:
-        print("La maison gagnante est Serdaigle avec", e, "points.")
-
-    else:
-        print("Il y a une égalité entre plusieurs maisons !")'''
-
-'''if __name__ == "__main__":
-    maisons = {
-        "Gryffondor": 50,
-        "Serpentard": 30,
-        "Poufsouffle": 20,
-        "Serdaigle": 40
-    }
-
-    actualiser_points_maison(maisons, "Gryffondor", 10)
-    actualiser_points_maison(maisons, "Serpentard", -5)
-    actualiser_points_maison(maisons, "Poubelle", 15)
-
-    print("État final :", maisons)'''
 if __name__ == "__main__":
     maisons={}
 
