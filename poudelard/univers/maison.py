@@ -24,7 +24,7 @@ def afficher_maison_gagnante(maisons):
     if len(maisons_gagnantes) == 1:
         print(f"La maison gagnante est {maisons_gagnantes[0]} avec {max_point} points")
     else :
-        liste_gagnantes = ", ".join(maisons_gagnantes) #à demander au prof
+        liste_gagnantes = ", ".join(maisons_gagnantes)
         print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")
 
 if __name__ == "__main__":
