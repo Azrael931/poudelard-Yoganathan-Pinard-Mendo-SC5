@@ -46,5 +46,3 @@ if __name__ == "__main__": #Test de la fonction rencontrer_hagrid
 
 def acheter_fournitures(personnage) :
     json.load(poudelard.data.inventaire.json)
-
-
