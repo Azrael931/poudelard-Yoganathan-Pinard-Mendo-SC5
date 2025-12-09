@@ -44,4 +44,3 @@ if __name__ == "__main__":
         "Serdaigle": 100
     }
     afficher_maison_gagnante(maisons_test_2)
-
