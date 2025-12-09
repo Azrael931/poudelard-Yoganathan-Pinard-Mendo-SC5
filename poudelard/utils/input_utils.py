@@ -43,10 +43,10 @@ def demander_choix(message, options):
         choix = demander_nombre(message, 1, len(options))
         return choix
 
+import json
+import os
 
-if __name__ == "__main__":
-    mes_options = ["Fleur","Gâteau","Viande"]
-    print("---TEST DEMANDER CHOIX---")
-    resultat = demander_choix("Tu préfères quoi entre : ", mes_options)
-    print(f"Tu préfères {mes_options[resultat - 1]}")
+def load_fichier(chemin_fichier):
+    with open(chemin_fichier, "r", encoding="utf-8") as f:
+        return json.load(f)
 
