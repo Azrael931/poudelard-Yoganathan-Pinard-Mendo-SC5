@@ -44,6 +44,7 @@ def demander_choix(message, options):
         return choix
 
 
+
 if __name__ == "__main__":
     mes_options = ["Fleur","Gâteau","Viande"]
     print("---TEST DEMANDER CHOIX---")
