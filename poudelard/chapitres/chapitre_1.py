@@ -1,5 +1,3 @@
-import json
-
 from poudelard.univers.personnage import *
 from poudelard.utils.input_utils import *
 
@@ -45,4 +43,12 @@ if __name__ == "__main__": #Test de la fonction rencontrer_hagrid
     rencontrer_hagrid(joueur)
 
 def acheter_fournitures(personnage) :
-    json.load(poudelard.data.inventaire.json)
+    shop =load_fichier("data/inventaire.json")
+    print("Bienvenue sur le Chemin de Traverse !")
+    print(shop)
+
+
+
+
+if __name__ == "__main__": #Test de la fonction acheter_fournitures
+    acheter_fournitures(joueur)
