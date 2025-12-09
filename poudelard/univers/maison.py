@@ -32,7 +32,7 @@ def afficher_maison_gagnante(maisons):
         print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")'''
 
 def repartition_maison(joueur, questions):
-    joueur =
+    joueur = {"courage":2,"intelligence":0,"loyauté":0,"ambition":0}
     L = ["courir", "mourir", "applaudir"]
     questions = (question_text, L, maisons)
     print(questions[0])
@@ -46,7 +46,7 @@ def repartition_maison(joueur, questions):
 
 
 if __name__ == "__main__":
-    joueur=
+    joueur= {"courage":2,"intelligence":0,"loyauté":0,"ambition":0}
     joueur="michel"
     question_text="veux tu mourir?"
     L=["courir", "mourir", "applaudir"]
