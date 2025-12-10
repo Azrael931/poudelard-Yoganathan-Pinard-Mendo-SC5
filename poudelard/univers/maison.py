@@ -37,10 +37,11 @@ def repartition_maison(joueur, questions):
     questions = (question_text, L, maisons)
     print(questions[0])
     print(questions[1])
-    i = int(input("faites un choix ?"))
+    i = int(input("faites un choix :"))
     print(L[i])
     if i == 1:
         joueur["courage"] += 1
+
     print(joueur)
 
 
