@@ -32,7 +32,8 @@ def afficher_maison_gagnante(maisons):
         print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")'''
 
 def repartition_maison(joueur, questions):
-    joueur = {"courage":2,"intelligence":0,"loyauté":0,"ambition":0}
+    joueur = initialiser_personnage(mendo,michel,attributs=)
+    attributs= joueur["attributs"]
     L = ["courir", "mourir", "applaudir"]
     questions = (question_text, L, maisons)
     print(questions[0])
@@ -40,10 +41,10 @@ def repartition_maison(joueur, questions):
     i = int(input("faites un choix :"))
     print(L[i])
     if i == 1:
-        joueur["courage"] += 1
+        attributs["courage]"+= 1
 
     print(joueur)
-
+    print("tag for commit")
 
 
 if __name__ == "__main__":
