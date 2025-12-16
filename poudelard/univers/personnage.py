@@ -38,7 +38,7 @@ def modifier_argent(joueur, montant): #Modification de l'argent du joueur
     joueur["argent"] += montant
 if __name__ == "__main__" : #Test de la fonction modifier_argent
     print("---Test Modification d'argent---")
-
+print("tag for commit ")
 
 
 

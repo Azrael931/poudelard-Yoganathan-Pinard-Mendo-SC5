@@ -1,12 +1,15 @@
-def actualiser_points_maison(maisons, nom_maison, points):
-    maisons = {
+from poudelard.chapitres.chapitre_1 import creer_personnage
+from poudelard.univers.personnage import initialiser_personnage
+
+maisons = {
         "Gryffondor": 0,
         "Serpentard": 0,
         "Poufsouffle": 0,
-        "Serdaigle" : 0,
+        "Serdaigle": 0,
     }
+question_text=str()
 
-def actualiser_points_maison(maisons, nom_maison, points):
+'''def actualiser_points_maison(maisons, nom_maison, points):
     if nom_maison in maisons:
         maisons[nom_maison] += points
         print(f"La maison {nom_maison} a maintenant {maisons[nom_maison]} points.")
@@ -27,6 +30,23 @@ def afficher_maison_gagnante(maisons):
     else :
         liste_gagnantes = ", ".join(maisons_gagnantes)
         print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")
+        print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")'''
+
+def repartition_maison(joueur, questions):
+    joueur = initialiser_personnage(mendo,michel,attributs=)
+    attributs= joueur["attributs"]
+    L = ["courir", "mourir", "applaudir"]
+    questions = (question_text, L, maisons)
+    print(questions[0])
+    print(questions[1])
+    i = int(input("faites un choix :"))
+    print(L[i])
+    if i == 1:
+        attributs["courage]"+= 1
+
+    print(joueur)
+    print("tag for commit ")
+
 
 if __name__ == "__main__":
     print("\n--- Test 1 : Vainqueur unique ---")
