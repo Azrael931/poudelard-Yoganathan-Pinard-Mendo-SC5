@@ -44,7 +44,7 @@ def repartition_maison(joueur, questions):
         attributs["courage]"+= 1
 
     print(joueur)
-    print("tag for commit")
+    print("tag for commit ")
 
 
 if __name__ == "__main__":

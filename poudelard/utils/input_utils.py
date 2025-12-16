@@ -56,4 +56,4 @@ def load_fichier(chemin_fichier):
         with open(chemin_fichier, "r", encoding="utf-8") as f:
             return json.load(f)
 
-print("tag for commit")
+print("tag for commit ")

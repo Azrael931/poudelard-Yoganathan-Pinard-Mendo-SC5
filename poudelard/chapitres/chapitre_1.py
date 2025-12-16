@@ -86,7 +86,7 @@ def acheter_fournitures(personnage):
         ajouter_objet_inventaire(personnage, "Inventaire", nom)
     else:
         print("Pas assez d'argent pour l'animal. Tant pis !")
-    print("tag for commit")
+    print("tag for commit ")
 
 
 if __name__ == "__main__":
