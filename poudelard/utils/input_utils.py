@@ -14,28 +14,48 @@ def demander_nombre(message, min_val=None, max_val=None):
         texte = input(message + " ").strip()
 
         est_valide = True
-        for c in texte:
-            if c < '0' or c > '9':
-                est_valide = False
-                break
+        est_negatif = False
+
+        if texte == "":
+            est_valide = False
+
+        else:
+            if texte[0] == "-":
+                est_negatif = True
+                if len(texte) == 1:
+                    est_valide = False
+                else:
+                    a_verifier = texte[1:]
+            else:
+                a_verifier = texte
+
+            if est_valide:
+                for c in a_verifier:
+                    if c < "0" or c > "9":
+                        est_valide = False
+                        break
 
         if not est_valide:
             print("Veuillez entrer uniquement des chiffres.")
             continue
 
         valeur = 0
-        for c in texte:
-            valeur = valeur * 10 + (ord(c) - ord('0'))
+        for c in a_verifier:
+            valeur = valeur * 10 + (ord(c) - ord("0"))
+
+        if est_negatif:
+            valeur = -valeur
 
         if min_val is not None and valeur < min_val:
             print(f"Veuillez entrer un nombre entre {min_val} et {max_val}.")
             continue
 
         if max_val is not None and valeur > max_val:
-            print(f"Veuillez entrer un nombre {min_val} et {max_val}.")
+            print(f"Veuillez entrer un nombre entre {min_val} et {max_val}.")
             continue
 
         return valeur
+
 
 def demander_choix(message, options):
     while True :
@@ -55,5 +75,3 @@ if __name__ == "__main__":
 def load_fichier(chemin_fichier):
         with open(chemin_fichier, "r", encoding="utf-8") as f:
             return json.load(f)
-
-print("tag for commit ")

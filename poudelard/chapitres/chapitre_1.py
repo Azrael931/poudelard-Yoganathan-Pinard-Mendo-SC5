@@ -1,5 +1,5 @@
-from poudelard.univers.personnage import *
-from poudelard.utils.input_utils import *
+from poudelard.univers.personnage import initialiser_personnage, afficher_personnage, modifier_argent, ajouter_objet
+from poudelard.utils.input_utils import demander_nombre, demander_texte,demander_choix, load_fichier
 
 
 def introduction():
@@ -54,7 +54,7 @@ def acheter_fournitures(personnage):
     inventaire_data = load_fichier("data/inventaire.json")
 
     if not inventaire_data:
-        print("Erreur critique : Impossible de charger le catalogue.")
+        print("Impossible de charger le catalogue.")
         return
 
     objets_obligatoires = {"Baguette magique", "Robe de sorcier", "Manuel de potions"}
@@ -68,24 +68,48 @@ def acheter_fournitures(personnage):
         print(f"Objets obligatoires restants : {', '.join(manquants)}")
 
         print("Catalogue :")
-        for i, item in enumerate(inventaire_data, 1):
-            print(f"{i}. {item['nom']} - {item['prix']} galions")
+        
+
+        cles = []
+        for k in inventaire_data:
+            cles.append(k)
+
+        n = len(cles)
+        for i in range(n):
+            for j in range(0, n - i - 1):
+
+                if int(cles[j]) > int(cles[j+1]):
+                    temp = cles[j]
+                    cles[j] = cles[j+1]
+                    cles[j+1] = temp
+        
+        for cle in cles:
+            item = inventaire_data[cle]
+            print(f"{cle}. {item[0]} - {item[1]} galions")
 
         choix = demander_nombre("Entrez le numéro de l'objet à acheter : ", 1, len(inventaire_data))
-        objet_choisi = inventaire_data[choix - 1]
+        cle_choisie = str(choix)
+        
+        if cle_choisie not in inventaire_data:
+             print("Choix invalide.")
+             continue
+             
+        objet_choisi = inventaire_data[cle_choisie]
+        nom_objet = objet_choisi[0]
+        prix_objet = objet_choisi[1]
 
-        if objet_choisi['nom'] in achats_faits:
+        if nom_objet in achats_faits:
             print("Vous avez déjà cet objet.")
             continue
 
-        if personnage['argent'] >= objet_choisi['prix']:
-            modifier_argent(personnage, -objet_choisi['prix'])
-            ajouter_objet(personnage, "Inventaire", objet_choisi['nom'])
-            achats_faits.add(objet_choisi['nom'])
-            print(f"Vous avez acheté : {objet_choisi['nom']}")
+        if personnage['argent'] >= prix_objet:
+            modifier_argent(personnage, -prix_objet)
+            ajouter_objet(personnage, "inventaire", nom_objet)
+            achats_faits.add(nom_objet)
+            print(f"Vous avez acheté : {nom_objet} -{prix_objet} galions.")
         else:
             print("Fonds insuffisants !")
-            if objet_choisi['nom'] in objets_obligatoires:
+            if nom_objet in objets_obligatoires:
                 print("C'est un objet obligatoire, vous ne pouvez pas aller à Poudlard sans lui.")
                 print("Game Over.")
                 exit()
@@ -110,10 +134,11 @@ def acheter_fournitures(personnage):
 
     if personnage['argent'] >= animal_choisi['prix']:
         modifier_argent(personnage, -animal_choisi['prix'])
-        ajouter_objet(personnage, "Inventaire", animal_choisi['nom'])
+        ajouter_objet(personnage, "inventaire", animal_choisi['nom'])
         print(f"Vous avez choisi : {animal_choisi['nom']}")
     else:
         print("Dommage, vous n'avez pas assez d'argent pour cet animal.")
+        exit()
 
     print("\nVoici votre inventaire final avant le départ :")
     afficher_personnage(personnage)
