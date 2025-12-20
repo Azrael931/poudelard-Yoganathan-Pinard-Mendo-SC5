@@ -13,7 +13,7 @@ def lancer_choix_menu():
         "Serdaigle": 0
     }
 
-    personnage = None
+
 
     while True:
         afficher_menu_principal()
@@ -21,7 +21,7 @@ def lancer_choix_menu():
         choix = demander_choix("Votre choix :", options_menu)
 
         if choix == 1:
-            personnage = lancer_chapitre_1()
+            lancer_chapitre_1()
 
         elif choix == 2:
             print("Merci d'avoir joué à Poudelard : à bientôt, jeune sorcier !")
