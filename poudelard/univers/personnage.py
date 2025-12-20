@@ -1,4 +1,4 @@
-def initialiser_personnage(nom, prenom, attributs): #initilisation du personnage
+def initialiser_personnage(nom, prenom, attributs):
 
     joueur = {
         "nom": nom,
@@ -10,7 +10,7 @@ def initialiser_personnage(nom, prenom, attributs): #initilisation du personnage
     }
     return joueur
 
-def afficher_personnage(joueur): #Affichage du personnage
+def afficher_personnage(joueur):
     print("Profil du personnage : ")
     print(f"Nom : {joueur['nom']}")
     print(f"Prénom : {joueur['prenom']}")
@@ -25,7 +25,7 @@ def afficher_personnage(joueur): #Affichage du personnage
     for attributs, valeur in joueur["attributs"].items():
         print(f"- {attributs} : {valeur}")
 
-if __name__ == "__main__": #Test de la fonction afficher_personnage
+if __name__ == "__main__":
 
     print("---Test Affichage du personnage---")
     attributs_test = {"courage": 8, "intelligence": 8, "loyaute": 8, "ambition" : 8,}
@@ -36,13 +36,13 @@ if __name__ == "__main__": #Test de la fonction afficher_personnage
 
 def modifier_argent(joueur, montant): #Modification de l'argent du joueur
     joueur["argent"] += montant
-if __name__ == "__main__" : #Test de la fonction modifier_argent
+if __name__ == "__main__" :
     print("---Test Modification d'argent---")
 print("tag for commit ")
 
 
 
-def ajouter_objet_inventaire(joueur,cle, objet):
+def ajouter_objet(joueur,cle, objet):
     joueur[cle].append(objet)
-if __name__ == "__main__": #Test de la fonction ajouter_objet_inventaire
+if __name__ == "__main__":
     print("---Test Ajout d'objet dans l'inventaire---")
