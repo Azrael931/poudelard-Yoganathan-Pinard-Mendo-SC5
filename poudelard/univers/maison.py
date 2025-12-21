@@ -1,5 +1,5 @@
-from poudelard.chapitres.chapitre_1 import creer_personnage
-from poudelard.univers.personnage import initialiser_personnage
+from poudelard.utils.input_utils import demander_choix
+
 
 maisons = {
         "Gryffondor": 0,
@@ -9,7 +9,7 @@ maisons = {
     }
 question_text=str()
 
-'''def actualiser_points_maison(maisons, nom_maison, points):
+def actualiser_points_maison(maisons, nom_maison, points):
     if nom_maison in maisons:
         maisons[nom_maison] += points
         print(f"La maison {nom_maison} a maintenant {maisons[nom_maison]} points.")
@@ -29,29 +29,54 @@ def afficher_maison_gagnante(maisons):
         print(f"La maison gagnante est {maisons_gagnantes[0]} avec {max_point} points")
     else :
         liste_gagnantes = ", ".join(maisons_gagnantes)
-        print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")'''
+        print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")
 
 def repartition_maison(joueur, questions):
-    joueur = initialiser_personnage(mendo,michel,attributs=)
-    attributs= joueur["attributs"]
-    L = ["courir", "mourir", "applaudir"]
-    questions = (question_text, L, maisons)
-    print(questions[0])
-    print(questions[1])
-    i = int(input("faites un choix :"))
-    print(L[i])
-    if i == 1:
-        attributs["courage]"+= 1
+    scores = {
+        "Gryffondor": 0,
+        "Serpentard": 0,
+        "Poufsouffle": 0,
+        "Serdaigle": 0
+    }
 
-    print(joueur)
-    print("tag for commit ")
+    attributs = joueur["attributs"]
 
 
-if __name__ == "__main__":
-    joueur= {"courage":2,"intelligence":0,"loyauté":0,"ambition":0}
-    joueur="michel"
-    question_text="veux tu mourir?"
-    L=["courir", "mourir", "applaudir"]
-    questions=(question_text,L,maisons)
-repartition_maison(joueur,questions)
+    courage = attributs["courage"] if "courage" in attributs else 0
+    ambition = attributs["ambition"] if "ambition" in attributs else 0
+    loyaute = attributs["loyaute"] if "loyaute" in attributs else 0
+    intelligence = attributs["intelligence"] if "intelligence" in attributs else 0
 
+    scores["Gryffondor"] += courage * 2
+    scores["Serpentard"] += ambition * 2
+    scores["Poufsouffle"] += loyaute * 2
+    scores["Serdaigle"] += intelligence * 2
+
+
+    for texte, options, maisons_associees in questions:
+        print(texte)
+
+        reponse = demander_choix("Ton choix :", options)
+
+        indice = reponse - 1
+        
+        if 0 <= indice < len(maisons_associees):
+            maison = maisons_associees[indice]
+            scores[maison] += 3
+        else:
+            print("Erreur de choix.")
+
+
+    print("Résumé des scores :")
+    for maison, score in scores.items():
+        print(f"{maison} : {score} points")
+
+
+    meilleure_maison = None
+    meilleur_score = -1
+    for maison, score in scores.items():
+        if score > meilleur_score:
+            meilleur_score = score
+            meilleure_maison = maison
+
+    return meilleure_maison
