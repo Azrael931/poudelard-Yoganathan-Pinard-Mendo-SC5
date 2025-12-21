@@ -1,4 +1,4 @@
-from menu import lancer_choix_menu
+from poudelard.menu import lancer_choix_menu
 
 def main():
     print("=== Lancement du jeu Poudelard ===")

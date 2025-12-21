@@ -16,7 +16,7 @@ def demander_nombre(message, min_val=None, max_val=None):
         est_valide = True
         est_negatif = False
 
-        if texte == "":
+        if not texte:
             est_valide = False
 
         else:
@@ -38,7 +38,6 @@ def demander_nombre(message, min_val=None, max_val=None):
         if not est_valide:
             print("Veuillez entrer uniquement des chiffres.")
             continue
-
         valeur = 0
         for c in a_verifier:
             valeur = valeur * 10 + (ord(c) - ord("0"))
@@ -49,11 +48,9 @@ def demander_nombre(message, min_val=None, max_val=None):
         if min_val is not None and valeur < min_val:
             print(f"Veuillez entrer un nombre entre {min_val} et {max_val}.")
             continue
-
         if max_val is not None and valeur > max_val:
             print(f"Veuillez entrer un nombre entre {min_val} et {max_val}.")
             continue
-
         return valeur
 
 
@@ -72,6 +69,7 @@ if __name__ == "__main__":
     resultat = demander_choix("Tu préfères quoi entre : ", mes_options)
     print(f"Tu préfères {mes_options[resultat - 1]}")
 
+
 def load_fichier(chemin_fichier):
-        with open(chemin_fichier, "r", encoding="utf-8") as f:
-            return json.load(f)
+    with open(chemin_fichier, "r", encoding="utf-8") as f:
+        return json.load(f)

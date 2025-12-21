@@ -13,8 +13,8 @@ def lancer_choix_menu():
         choix = demander_choix("Votre choix :", options_menu)
 
         if choix == 1:
-            joueur = lancer_chapitre_1()
-            lancer_chapitre_2(joueur)
+            personnage = lancer_chapitre_1()
+            lancer_chapitre_2(personnage)
 
         elif choix == 2:
             print("Merci d'avoir joué à Poudelard : à bientôt, jeune sorcier !")
