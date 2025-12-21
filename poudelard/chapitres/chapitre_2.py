@@ -1,5 +1,7 @@
 from poudelard.univers.maison import repartition_maison
 from poudelard.utils.input_utils import demander_choix, load_fichier
+from poudelard.univers.personnage import initialiser_personnage
+joueur = initialiser_personnage
 # création d'un joueur test dans un premier temps
 
 
@@ -118,7 +120,8 @@ def installation_maison_commune(joueur, maison_attribuee):
         print(f"{attr.capitalize()} : {val}")
 
 
-def lancer_chapitre_2():
+def lancer_chapitre_2(joueur):
+
     rencontrer_amis(joueur)
     mot_de_bienvenue()
     maison_attribuee = ceremonie_repartition(joueur)
@@ -126,7 +129,7 @@ def lancer_chapitre_2():
     print("\n- Fin du Chapitre 2 -\n Que vous attend dans cette nouvelle maison? A suivre...")
 
 
-lancer_chapitre_2()
+lancer_chapitre_2(joueur)
 
 
 
