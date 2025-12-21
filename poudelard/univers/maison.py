@@ -29,7 +29,6 @@ def afficher_maison_gagnante(maisons):
         print(f"La maison gagnante est {maisons_gagnantes[0]} avec {max_point} points")
     else :
         liste_gagnantes = ", ".join(maisons_gagnantes)
-        print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")
         print(f"Les maisons gagnantes sont : {liste_gagnantes} avec {max_point} points")'''
 
 def repartition_maison(joueur, questions):
@@ -49,19 +48,10 @@ def repartition_maison(joueur, questions):
 
 
 if __name__ == "__main__":
-    print("\n--- Test 1 : Vainqueur unique ---")
-    maisons_test_1 = {
-        "Gryffondor": 150,
-        "Serpentard": 120,
-        "Poufsouffle": 50,
-        "Serdaigle": 100
-    }
-    afficher_maison_gagnante(maisons_test_1)
-    print("\n--- Test 2 : Égalité parfaite ---")
-    maisons_test_2 = {
-        "Gryffondor": 200,
-        "Serpentard": 200,
-        "Poufsouffle": 50,
-        "Serdaigle": 100
-    }
-    afficher_maison_gagnante(maisons_test_2)
+    joueur= {"courage":2,"intelligence":0,"loyauté":0,"ambition":0}
+    joueur="michel"
+    question_text="veux tu mourir?"
+    L=["courir", "mourir", "applaudir"]
+    questions=(question_text,L,maisons)
+repartition_maison(joueur,questions)
+

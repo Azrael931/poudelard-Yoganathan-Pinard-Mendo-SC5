@@ -1,5 +1,3 @@
-import json
-
 from poudelard.univers.personnage import *
 from poudelard.utils.input_utils import *
 import sys
