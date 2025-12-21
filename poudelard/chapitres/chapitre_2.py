@@ -95,6 +95,7 @@ def ceremonie_repartition(joueur):
 
 def installation_salle_commune(joueur):
     maison_attribuee =ceremonie_repartition(joueur)
+    joueur['Maison'] = maison_attribuee
     data_maisons = load_fichier("data/maisons.json")
 
     info_maison = data_maisons[maison_attribuee]
