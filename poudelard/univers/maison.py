@@ -39,12 +39,12 @@ def repartition_maison(joueur, questions):
         "Serdaigle": 0
     }
 
-    attributs = joueur["attributs"]
+    attributs = joueur['attributs']
 
 
     courage = attributs["courage"] if "courage" in attributs else 0
     ambition = attributs["ambition"] if "ambition" in attributs else 0
-    loyaute = attributs["loyaute"] if "loyaute" in attributs else 0
+    loyaute = attributs["loyauté"] if "loyauté" in attributs else 0
     intelligence = attributs["intelligence"] if "intelligence" in attributs else 0
 
     scores["Gryffondor"] += courage * 2
@@ -80,3 +80,5 @@ def repartition_maison(joueur, questions):
             meilleure_maison = maison
 
     return meilleure_maison
+
+
