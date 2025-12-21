@@ -53,14 +53,19 @@ with open("../data/quiz_magie.json", "r", encoding="utf-8") as f:
 
 
 score = 0
-Q1 = random.choice(quiz_magie)
-juste = Q1[reponse]
-rep = input(Q1)
-if juste
-    score = score + 25
-    print("Bonne réponse ! tu gagnes +25 pints pour ta maison")
-if
-    print("Mauvaise reponse . La bonne réponse était",juste,)
+selection = random.sample(quiz_magie, 4)
+for q in selection:
+    juste = q["reponse"]
+    rep = input(q["question"] + " ").strip().lower()
+    juste1 = juste.strip().lower()
+
+    if rep == juste1:
+        score = score + 25
+        print("Bonne réponse ! tu gagnes +25 pints pour ta maison")
+    else:
+        print("Mauvaise reponse . La bonne réponse était",juste,)
+
+print("ton score est de :",score,"maintenant")
 
 
 
