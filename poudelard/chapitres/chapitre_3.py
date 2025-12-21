@@ -34,7 +34,6 @@ print("Tu viens d'apprendre le sortilege : ", s5["nom"], "(Défensif)")
 
 print("Tu as terminé ton apprentissage de base à Poudlard !\nVoici les sortilèges que tu maîtrises désormais :")
 
-#( Travailler cette partie d''afficher la fonction des sort , je bloque )
 print("-", s1["nom"], ":", s1["description"])
 print("-", s2["nom"], ":", s2["description"])
 print("-", s3["nom"], ":", s3["description"])
@@ -66,15 +65,3 @@ for q in selection:
         print("Mauvaise reponse . La bonne réponse était",juste,)
 
 print("ton score est de :",score,"maintenant")
-
-
-
-
-
-
-
-
-'''ans = random.sample(sorts,4)
-print('ans')
-if ans == quiz_magie
-score = score + 25'''
