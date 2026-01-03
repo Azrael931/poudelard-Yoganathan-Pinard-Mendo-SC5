@@ -24,14 +24,17 @@ def apprendre_sorts(personnage, chemin_fichier="data/sorts.json"):
     s1 = random.choice(utilitaires)
     print("Tu viens d'apprendre le sortilege :", s1["nom"], "(Utilitaire)")
     input("Appuie sur Entrée pour continuer")
+    utilitaires.remove(s1)
 
     s2 = random.choice(utilitaires)
     print("Tu viens d'apprendre le sortilege :", s2["nom"], "(Utilitaire)")
     input("Appuie sur Entrée pour continuer")
+    utilitaires.remove(s2)
 
     s3 = random.choice(utilitaires)
     print("Tu viens d'apprendre le sortilege :", s3["nom"], "(Utilitaire)")
     input("Appuie sur Entrée pour continuer")
+    utilitaires.remove(s3)
 
     s4 = random.choice(offensifs)
     print("Tu viens d'apprendre le sortilege :", s4["nom"], "(Offensif)")
@@ -40,14 +43,13 @@ def apprendre_sorts(personnage, chemin_fichier="data/sorts.json"):
     s5 = random.choice(defensifs)
     print("Tu viens d'apprendre le sortilege :", s5["nom"], "(Défensif)")
 
-    S=[]
-    S.append(s1)
-    S.append(s2)
-    S.append(s3)
-    S.append(s4)
-    S.append(s5)
-
-    joueur["sortilèges"].append(S)
+    # Ajout des sorts au personnage
+    # On ajoute les noms des sorts pour que l'affichage soit propre
+    personnage["Sortilèges"].append(s1["nom"])
+    personnage["Sortilèges"].append(s2["nom"])
+    personnage["Sortilèges"].append(s3["nom"])
+    personnage["Sortilèges"].append(s4["nom"])
+    personnage["Sortilèges"].append(s5["nom"])
 
     print("Tu as terminé ton apprentissage de base à Poudlard !")
     print("Voici les sortilèges que tu maîtrises désormais :")
