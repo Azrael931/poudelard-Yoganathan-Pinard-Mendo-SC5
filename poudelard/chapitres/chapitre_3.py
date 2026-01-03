@@ -101,7 +101,7 @@ def quiz_magie(joueur, chemin_fichier="data/quiz_magie.json"):
 def lancer_chapitre_3(personnage, maisons):
     apprendre_sorts(personnage)
 
-    input("\nAppuie sur Entrée pour passer au quiz magique...")
+    input("\nAppuyer sur Entrée pour passer au quiz magique...")
 
     points_gagnes = quiz_magie(personnage)
 
