@@ -63,14 +63,14 @@ def rencontrer_amis(joueur):
 
 def mot_de_bienvenue():
     input(
-        "À l’entrée du Grand Hall, le directeur s’avance vers les nouveaux arrivants,\n son regard pétillant derrière ses lunettes en demi-lune.\n(cliquez sur entrée)")
+        "À l’entrée du Grand Hall, le directeur s’avance vers les nouveaux arrivants,\n son regard pétillant derrière ses lunettes en demi-lune.\nAppuyez sur Entrée pour continuer")
     input(
-        "- Bienvenue, mon ami. Que ta curiosité soit ta plus grande magie, \net que chaque pas dans ce lieu t’ouvre un peu plus les portes de l’imaginaire.\n(cliquez sur entrée)\n")
+        "- Bienvenue, mon ami. Que ta curiosité soit ta plus grande magie, \net que chaque pas dans ce lieu t’ouvre un peu plus les portes de l’imaginaire.\nAppuyez sur Entrée pour continuer\n")
 
 
 def ceremonie_repartition(joueur):
     input(
-        " Les élèves s’avancèrent vers le tabouret, le Choixpeau prêt à révéler leur maison.\n La salle retenait son souffle.\n(cliquez sur entrée) ")
+        " Les élèves s’avancèrent vers le tabouret, le Choixpeau prêt à révéler leur maison.\n La salle retenait son souffle.\nAppuyez sur Entrée pour continuer ")
     questions = [
         (
             "Tu vois un ami en danger. Que fais-tu ?",
