@@ -40,6 +40,15 @@ def apprendre_sorts(personnage, chemin_fichier="data/sorts.json"):
     s5 = random.choice(defensifs)
     print("Tu viens d'apprendre le sortilege :", s5["nom"], "(Défensif)")
 
+    S=[]
+    S.append(s1)
+    S.append(s2)
+    S.append(s3)
+    S.append(s4)
+    S.append(s5)
+
+    joueur["sortilèges"].append(S)
+
     print("Tu as terminé ton apprentissage de base à Poudlard !")
     print("Voici les sortilèges que tu maîtrises désormais :")
 
