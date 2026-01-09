@@ -27,7 +27,7 @@ def afficher_personnage(joueur):
 
 
 
-def modifier_argent(joueur, montant): #Modification de l'argent du joueur
+def modifier_argent(joueur, montant):
     joueur["argent"] += montant
 
 
